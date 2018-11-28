@@ -1,6 +1,6 @@
-$ad_name='isaev.local' # Name of your domain
+$ad_name='example.com' # Name of your domain
 $ad_mode=7 # Mode of domain and forest (7 = Server 2016)
-$netbios='ISAEV' # NetBios name of domain ($netbios\user)
+$netbios='example' # NetBios name of domain ($netbios\user)
 $pass=Read-Host -AsSecureString Enter SafeMode Admin Pass # Pass for recovery mode
 install-windowsfeature AD-Domain-Services
 Import-Module ADDSDeployment
