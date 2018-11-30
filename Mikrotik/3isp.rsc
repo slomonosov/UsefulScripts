@@ -23,21 +23,21 @@
 }
 :if ($ISP1downtime >= 0) do={
 	:set ISP1sec ($currenttime-$ISP1downtime)
-	:log info "ISP1 was down $ISP1sec seeconds ago"
+	:log info "ISP1 was down $ISP1sec seconds ago"
 } else={
 	:log warning "ISP1downtime isn't set. Set it to 0"
 	:set ISP1downtime 0
 }
 :if ($ISP2downtime >= 0) do={
 	:set ISP2sec ($currenttime-$ISP2downtime)
-	:log info "ISP2 was down $ISP2sec seeconds ago"
+	:log info "ISP2 was down $ISP2sec seconds ago"
 } else={
 	:log warning "ISP2downtime isn't set. Set it to 0"
 	:set ISP2downtime 0
 }
 :if ($ISP3downtime >= 0) do={
 	:set ISP3sec ($currenttime-$ISP3downtime)
-	:log info "ISP3 was down $ISP3sec seeconds ago"
+	:log info "ISP3 was down $ISP3sec seconds ago"
 } else={
 	:log warning "ISP3downtime isn't set. Set it to 0"
 	:set ISP3downtime 0
