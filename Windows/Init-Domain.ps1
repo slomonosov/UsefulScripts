@@ -2,7 +2,7 @@
 $dnsinstalled=(Get-WindowsFeature -Name DNS | select InstallState) -match "Available"
 if ($dnsinstalled) {
     Write-Host DNS is not installed, but Available. Install it!
-    Install-WindowsWeature DNS
+    Install-WindowsFeature DNS
 }
 # $ad_name Name of your domain
 $ad_name='example.com'
@@ -18,6 +18,6 @@ $ad_mode=7
 $netbios='example'
  # $pass Pass for recovery mode.
 $pass=Read-Host -AsSecureString Enter SafeMode Admin Pass
-Install-WindowsWeature AD-Domain-Services
+Install-WindowsFeature AD-Domain-Services
 Import-Module ADDSDeployment
 Install-ADDSForest -CreateDnsDelegation:$false -DatabasePath 'C:\Windows\NTDS' -DomainMode $ad_mode -DomainName $ad_name -DomainNetbiosName $netbios -ForestMode $ad_mode -InstallDns:$true -LogPath 'C:\Windows\NTDS' -NoRebootOnCompletion:$false -SysvolPath 'C:\Windows\SYSVOL' -Force:$true -SafeModeAdministratorPassword $pass
