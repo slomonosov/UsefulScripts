@@ -15,7 +15,7 @@ systemctl start chronyd && systemctl enable chronyd
 #ADD
 echo $AD_PASS | realm join -U $AD_USER $DOMAIN
 #CONF
-sed -i 's/use_fully_qualified_names = True/use_fully_qualified_names = False' /etc/sssd/sssd.conf
+sed -i 's/use_fully_qualified_names = True/use_fully_qualified_names = False/' /etc/sssd/sssd.conf
 authconfig --enablemkhomedir --enablesssdauth --updateall
 systemctl enable sssd.service && systemctl restart sssd
 echo "%$SUDO_GROUP@$DOMAIN ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/$SUDO_GROUP
